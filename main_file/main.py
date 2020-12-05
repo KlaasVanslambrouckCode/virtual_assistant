@@ -147,8 +147,22 @@ while True:
             res = client.query(question)
             answer = next(res.results).text
             assistantResponse(answer)
+    
+    elif ('who are you' in text):
+        assistantResponse('''I am an artifical intelligence program made by Klaas Vanslambrouck. ''')
+    
+    elif ('how old are you' in text):
+        assistantResponse('''It is rude to ask somebody how old they are. 
+        But I was created in november 2020 but I don't have an exact birthday. Sad isn't it?''')
+
+    elif ('Yes it is sad' in text):
+        assistantResponse('I know.')
+    
+    elif ('tell' in text and 'joke' in text):
+        assistantResponse('''I only know one joke. Why do we tell actors to “break a leg?”      
+                            Because every play has a cast.''')
             
                
-    elif ('stop' in text or 'shut up' in text):
+    elif ('stop' in text or 'shut up' in text or 'Bye' in text or 'bye bye' in text):
        time.sleep(3)
        sys.exit(assistantResponse('Bye bye'))
